@@ -1,6 +1,9 @@
 #ifndef USEFUL_H
 #define USEFUL_H
 
+///< compile time size check, will raise: error: size of array 'ASSERTION_FAILURE' is negative
+#define CT_ASSERT(exp) typedef int ASSERTION_FAILURE [(exp) ? 1 : -1]
+
 #define BYTE_WISE_REVERSE_U32(n) ((uint32_t) (((n & 0x000000FF) << 24) | \
                                               ((n & 0x0000FF00) <<  8) | \
                                               ((n & 0x00FF0000) >>  8) | \
