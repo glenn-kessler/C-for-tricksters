@@ -58,3 +58,7 @@ int main(void)
 
     printf("%x", _container.bf);
 }
+
+// repeat until x reaches 0
+unsigned int x = 1000;
+do { /* do something */ } while (--x);
