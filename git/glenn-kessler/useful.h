@@ -1,6 +1,12 @@
 #ifndef USEFUL_H
 #define USEFUL_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
+///< requires GCC 3.1 or higher: true: if the element is an array. false: if the element is a pointer
+#define IS_STATIC_ARRAY(arr) !__builtin_types_compatible_p(typeof(arr), typeof(&arr[0]))
+
 ///< compile time size check, will raise: error: size of array 'ASSERTION_FAILURE' is negative
 #define CT_ASSERT(exp) typedef int ASSERTION_FAILURE [(exp) ? 1 : -1]
 
