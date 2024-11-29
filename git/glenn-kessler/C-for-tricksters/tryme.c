@@ -44,7 +44,33 @@ typedef struct
 
 } ST_EXAMPLE;
 
+/**
+ * @struct ST_UNION_EXAMPLE
+ * @union  provide different types for the same data
+ * @brief  provide type to access single bits as bitfield
+ */
+typedef struct
+{
+    union
+    {
+        uint8_t value;
+        struct
+        {
+            uint8_t Bit_0 : 1;
+            uint8_t Bit_1 : 1;
+            uint8_t Bit_2 : 1;
+            uint8_t Bit_3 : 1;
+            uint8_t Bit_4 : 1;
+            uint8_t Bit_5 : 1;
+            uint8_t Bit_6 : 1;
+            uint8_t Bit_7 : 1;
+        };
+    };
+} ST_UNION_EXAMPLE;
+
 static ST_EXAMPLE _container;  ///< global var
+
+static ST_UNION_EXAMPLE _union_example_array[2]  = {{.value = 0}}; // init to zero by using the union
 
 int main(void)
 {
